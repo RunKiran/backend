@@ -8,11 +8,23 @@ pipeline {
     }
 
     stages {
+        stage (read_versions){
+            steps {
+                script {
+                def packagejson = readCSV file: 'dir/input.csv'
+                def appversion = packagejson.version
+                echo "application version is $appversion"
+                }
+            }
+        }
 
         stage('Install dependencies') {
             steps {
                 sh """
                   npm install
+                  ls -lrt
+                  echo $appversion
+                  echo "application version is $appversion"
                 
                 """
             }
