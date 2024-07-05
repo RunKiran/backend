@@ -11,9 +11,11 @@ pipeline {
 
         stage('TEST') {
             steps {
-                sh 'echo This is TEST'
+                sh """
+                'echo This is TEST'
                 ls -lrt
                 sh 'sleep 10'
+                """
             }
         }
  
