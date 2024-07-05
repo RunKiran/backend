@@ -12,6 +12,7 @@ pipeline {
         stage('TEST') {
             steps {
                 sh 'echo This is TEST'
+                ls -lrt
                 sh 'sleep 10'
             }
         }
@@ -20,7 +21,7 @@ pipeline {
    }
     post {
         always {
-            echo 'i will always say hello gain'
+            echo 'i will always say hello agin'
             deletedir()
         }
     }
