@@ -24,7 +24,7 @@ pipeline {
     post {
         always {
             echo 'i will always say hello agin'
-            deletedir()
+            deleteDir()
         }
     }
 }
