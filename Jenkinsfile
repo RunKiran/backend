@@ -13,7 +13,7 @@ pipeline {
                 script {
                     def packagejson = readCSV file: 'dir/input.csv'
                     def appversion = packagejson.version
-                    echo "application version is $appversion"
+                    echo "application version is ${appversion}"
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
                   npm install
                   ls -lrt
                   echo $appversion
-                  echo "application version is $appversion"
+                  echo "application version is ${appversion}"
                 
                 """
             }
