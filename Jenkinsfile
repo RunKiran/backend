@@ -11,9 +11,9 @@ pipeline {
         stage (read_versions){
             steps {
                 script {
-                def packagejson = readCSV file: 'dir/input.csv'
-                def appversion = packagejson.version
-                echo "application version is $appversion"
+                    def packagejson = readCSV file: 'dir/input.csv'
+                    def appversion = packagejson.version
+                    echo "application version is $appversion"
                 }
             }
         }
